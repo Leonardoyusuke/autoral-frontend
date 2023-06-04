@@ -1,4 +1,7 @@
+'use client'
+import { useState } from 'react'
 import 'tailwindcss/tailwind.css';
+import LoginEnvironment from './loginEnvironment'
 import axios from 'axios'
 export default function LoginPage() {
     const [registerEnvironment, setRegisterEnvironment] = useState(true)
@@ -49,29 +52,29 @@ export default function LoginPage() {
                         <input className='mt-1vw h-2vw w-17vw rounded-sm'  type='password' placeholder='   Password'
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <button className={`w-17.5vw h-2vw rounded-md text-white  bg-blue-500  mt-1vw`} login >Entrar</button>
+                        <button className='w-17.5vw h-2vw rounded-md text-white  bg-blue-500  mt-1vw' login >Entrar</button>
                         <p className="text-blue-500">Esqueceu a senha?</p>
                     </form>
                     <div className="flex flex-col items-center">
                         <div className="mt-0.5vw border border-gray-400 w-17vw"></div>
-                        <button className={`w-17.5vw h-2vw rounded-md text-white  bg-green-500 mt-1vw`} onClick={setRegister}>Cadastre-se</button>
+                        <button className='w-17.5vw h-2vw rounded-md text-white  bg-green-500 mt-1vw' onClick={setRegister}>Cadastre-se</button>
                     </div></> :
                     <><form className="flex flex-col items-center" onSubmit={register}>
-                        <input className={`mt-3vw h-2vw w-17vw rounded-sm`} username placeholder='   Username'
+                        <input className='mt-3vw h-2vw w-17vw rounded-sm' username placeholder='   Username'
                             onChange={(e) => setUser(e.target.value)}
                         />
-                        <input className={`mt-3vw h-2vw w-17vw rounded-sm`} placeholder='   Email'
+                        <input className='mt-3vw h-2vw w-17vw rounded-sm' placeholder='   Email'
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                        <input className={`mt-1vw h-2vw w-17vw rounded-sm`} type='password' placeholder='   Password'
+                        <input className='mt-1vw h-2vw w-17vw rounded-sm' type='password' placeholder='   Password'
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                        <input className={`mt-1vw h-2vw w-17vw rounded-sm`} type='password' placeholder='   confirm Password' />
-                        <input className={`mt-1vw h-2vw w-17vw rounded-sm`} placeholder='   Picture Url'
+                        <input className='mt-1vw h-2vw w-17vw rounded-sm' type='password' placeholder='   confirm Password' />
+                        <input className='mt-1vw h-2vw w-17vw rounded-sm' placeholder='   Picture Url'
                             onChange={(e) => setPictureUrl(e.target.value)}
                         />
 
-                        <button className={`w-17.5vw h-2vw rounded-md text-white ${props.login ? "bg-blue-500" : "bg-green-500"} mt-1vw`} login >Registrar</button>
+                        <button className='w-17.5vw h-2vw rounded-md text-white bg-blue-500 mt-1vw' login >Registrar</button>
                     </form>
                     </>}
             </div>
