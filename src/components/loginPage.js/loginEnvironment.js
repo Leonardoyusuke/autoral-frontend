@@ -1,14 +1,19 @@
 import styled from "styled-components"
-export default function loginEnvironment(){
-    return(<><Forms>
-        <Input username placeholder='   Email' />
-        <Input placeholder='   Password' />
+export default function LoginEnvironment(){
+    return(<><Forms onSubmit={login}>
+        <Input username
+            placeholder='   Email'
+            onChange={(e) => setUser(e.target.value)}
+        />
+        <Input type='password' placeholder='   Password'
+            onChange={(e) => setPassword(e.target.value)}
+        />
         <Button login >Entrar</Button>
         <p>Esqueceu a senha?</p>
     </Forms>
     <Layout3>
         <Line></Line>
-        <Button>Cadastre-se</Button>
+        <Button onClick={setRegister}>Cadastre-se</Button>
     </Layout3></>)
 }
 export const Line = styled.div`
